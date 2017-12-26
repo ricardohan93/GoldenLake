@@ -316,6 +316,9 @@ a {
   .navbar_mobile_wrapper {
     display: block;
   }
+  #menu {
+    width: 23px;
+  }
   .jumbotron {
     height: 80vh;
     margin-bottom: 50px;

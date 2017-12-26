@@ -345,6 +345,9 @@ form input[type=submit]:hover {
   .navbar_mobile_wrapper {
     display: block;
   }
+  #menu {
+    width: 23px;
+  }
   .jumbotron {
     height: 80vh;
   }
