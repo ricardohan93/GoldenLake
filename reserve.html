@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <link href="reserve.css" type="text/css" rel="stylesheet">
+    <title>GoldenLake Golf Club</title>
+  </head>
+  <body>
+
+    <div class="navbar_desk">
+      <ul class="navbar">
+        <a class="navbar_logo" href="index.html" >
+          <img src="imagens/logo_full.png" alt="logo">
+        </a>
+        <div class="navbar_menu">
+          <li><a href="index.html#clube">O Clube</a></li>
+          <li><a href="campo.html">Campos</a></li>
+          <li><a href="index.html#estrutura">Estrutura</a></li>
+          <li><a href="index.html#price">Preços e Horários</a></li>
+          <li><a href="#">Eventos</a></li>
+          <li><a href="location.html">Localização</a></li>
+          <li><a href="reserve.html">Reservas</a></li>
+        </div>
+      </ul>
+    </div>
+
+      <!-- Mobile Navbar -->
+    <div class="navbar_mobile_wrapper">
+      <div class="navbar_mobile">
+        <div class="invisible"></div>
+        <a class="navbar_logo" href="index.html" >
+          <img src="imagens/logo.png" alt="logo">
+        </a>
+        <a href="#openmodal"><i class="ion-android-menu"></i></a>
+      </div>
+    </div>
+
+      <div class="modal_menu">
+        <nav class="modal_content" id="openmodal">
+          <ul class="modal_list">
+            <p>01.</p>
+            <li><a href="index.html#clube">O Clube</a></li>
+            <p>02.</p>
+            <li><a href="campo.html">Campos</a></li>
+            <p>03.</p>
+            <li><a href="index.html#services">Estrutura</a></li>
+            <p>04.</p>
+            <li><a href="index.html#price">Preços e Horários</a></li>
+            <p>05.</p>
+            <li><a href="location.html">Localização</a></li>
+            <p>06.</p>
+            <li><a href="reserve.html">Reservas</a></li>
+          </ul>
+          <a href="#close" title="close" class="close">X</a>
+        </nav>
+      </div>
+
+    <div class="jumbotron"> <!-- trocar background -->
+      <div class="jumbotron_content">
+        <h3>Reserve</h3>
+        <p>Venha jogar uma partida conosco</p>
+      </div>
+    </div>
+
+    <form action="#" method="POST">
+      <fieldset class="personal">
+        <legend>Informações</legend>
+        <div class="personal_flex">
+          <h3>01.</h3>
+          <div class="personal_content">
+            <label for="nome">Nome Completo*</label>
+            <input type="text" name="nome" size="100" placeholder="Escreva seu nome completo"> </br>
+
+            <label for="email">E-mail*</label>
+            <input type="email" name="email" size="100" placeholder="Escreva seu e-mail"> </br>
+
+            <label for="tel">Telefone de contato*</label>
+            <input type="" name="tel" size="100" placeholder="Ex: (11) 3333-3333"> </br>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="infos">
+        <legend>Planeje sua visita</legend>
+        <div class="infos_flex">
+          <h3>02.</h3>
+          <div class="infos_content">
+            <label for="data">Data*</label>
+            <input type="date" name="data">
+            <!-- <div class="data_row">
+              <input type="date" id="dia" name="data-dia" size="2" maxlength="2" placeholder="dia"></input>
+              <select name="data-mes" class="drop_down">
+                <option value="" disabled selected>Mês</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="março">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+              </select>
+              <select name="data-ano" class="drop_down">
+                <option value="" disabled selected>Ano</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+              </select>
+            </div> -->
+
+            <label for="numero_pessoas">Número de pessoas*</label>
+            <input type="number" name="numero_pessoas">
+
+            <!-- <label for="primeira_vez">Primeira vez jogando golfe ?</label>
+            <select name="primeira_vez" class="answer_modal">
+              <option value="" disabled selected>Responda</option>
+              <option value="sim">Sim</option>
+              <option value="não">Não</option>
+            </select> -->
+
+            <label for="prof_particular">Gostaria de solicitar um professor particular ?*</label>
+            <select name="prof_particular" class="answer_modal">
+              <option value="" disabled selected>Responda</option>
+              <option value="sim">Sim</option>
+              <option value="não">Não</option>
+            </select>
+
+            <!-- <label for="motivo">Qual a motivação em visitar o Golden Lake Golf Clube ?</label>
+            <select name="motivo" class="answer_modal">
+              <option value="" disabled selected>Responda</option>
+              <option value="jogar">Jogar Golfe</option>
+              <option value="aprender">Aprender Golfe</option>
+              <option value="passear">Passear e relaxar</option>
+            </select> -->
+
+            <label for="comments">Comentários ou informaçõs extras ?</label>
+            <textarea name="comments" rows="10"></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit">
+    </form>
+
+
+
+
+
+
+
+    <div class="contact" id="contact">
+      <p class="contact_title">Golden Lake Golf Club</p>
+      <h4>Telefone</h4>
+      <p class="contact_info">(11) 4354-9848</p>
+      <p class="contact_info">(11) 4354-0080</p>
+      <h4>Email</h4>
+      <p class="contact_info">administracao@goldenlake.com.br</p>
+      <p class="contact_info">compras@goldenlake.com.br</p>
+    </div>
+
+    <div class="footer">
+      <p>&#169; 2017 GoldenLake |</p>
+      <p>| Designed and developed by h.a.n</p>
+    </div>
+
+
+  <script src="index.js"></script>
+  </body>
+</html>
