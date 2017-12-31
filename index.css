@@ -7,6 +7,7 @@
 }
 body {
   /* background: #F2F2F2; */
+  position: relative;
 }
 a {
   text-transform: uppercase;
@@ -14,6 +15,8 @@ a {
   text-align: center;
   color: #FFF;
 }
+
+
 .navbar_desk {
   display: block;
 }
@@ -560,11 +563,56 @@ a {
 .adress_box .adress_txt:nth-child(2) {
   margin-bottom: 5%;
 }
-
 .btn_map {
   display: block;
   margin: 0 auto;
   width: 170px;
+}
+
+
+.weather {
+  /* background: #31253B; */
+  background: #333;
+  color: #FFF;
+  width: 80%;
+  height: 25vh;
+  margin: 5% auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.weather_block_bg {
+  width: 40%;
+  height: 100%;
+  border-right: 2px solid #2B1F35;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.main_weather_info {
+  margin: 15px 15% 5% 8%;
+}
+.main_weather_info p {
+  font-size: 1.1em;
+}
+.main_weather_info h3 {
+  font-size: 4em;
+}
+.weather_block_bg img {
+  align-self: center;
+  width: 90px;
+}
+.weather_block_sm {
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid #2B1F35;
+}
+.weather_block_sm p {
+  margin-top: 15px;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.weather_block_sm h3 {
+  font-size: 3em;
+  text-align: center;
 }
 
 
@@ -627,6 +675,8 @@ a {
   font-size: .8em;
   letter-spacing: 1px;
 }
+
+
 
 @media only screen and (max-width: 440px) {
   .navbar_desk {
@@ -821,6 +871,43 @@ a {
     line-height: 1.5em;
     margin: 0 auto 5% auto;
   }
+
+  .weather {
+    display: block;
+    height: 70vh;
+  }
+  .weather_block_bg {
+    width: 100%;
+    height: 26%;
+  }
+  .main_weather_info {
+    margin: 30px 15% 10% 15%;
+  }
+  .main_weather_info p {
+    font-size: 1em;
+  }
+  .main_weather_info h3 {
+    font-size: 2em;
+  }
+  .weather_block_bg img {
+    width: 60px;
+  }
+  .weather_block_sm {
+    width: 100%;
+    height: 20%;
+    border-right: none;
+    margin-top: 15px;
+  }
+  .weather_block_sm p {
+    margin-top: 6px;
+    margin-bottom: 1%;
+  }
+  .weather_block_sm h3 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+
   .contact {
     height: 50vh;
   }
@@ -842,4 +929,5 @@ a {
   .footer p {
     font-size: .55em;
   }
+
 }

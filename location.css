@@ -12,7 +12,7 @@ a {
   color: #FFF;
 }
 body {
-  background: #F2F2F2;
+  /* background: #F2F2F2; */
   position: relative;
 }
 
@@ -189,7 +189,51 @@ body {
   z-index: -1;
 }
 
-
+.weather {
+  /* background: #31253B; */
+  background: #333;
+  color: #FFF;
+  width: 80%;
+  height: 25vh;
+  margin: 5% auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.weather_block_bg {
+  width: 40%;
+  height: 100%;
+  border-right: 2px solid #2B1F35;
+  display: flex;
+  flex-flow: row nowrap;
+  /* align-items: center; */
+}
+.main_weather_info {
+  margin: 15px 15% 5% 8%;
+}
+.main_weather_info p {
+  font-size: 1.1em;
+}
+.main_weather_info h3 {
+  font-size: 4em;
+}
+.weather_block_bg img {
+  align-self: center;
+  width: 90px;
+}
+.weather_block_sm {
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid #2B1F35;
+}
+.weather_block_sm p {
+  margin-top: 15px;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.weather_block_sm h3 {
+  font-size: 3em;
+  text-align: center;
+}
 
 .contact {
   position: relative;

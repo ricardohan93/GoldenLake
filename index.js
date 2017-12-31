@@ -22,7 +22,7 @@ window.onscroll = function() {
 
 // show galery elements -----
 var boxes = document.querySelectorAll('.hide');
-var button = document.querySelector('.button');
+var button = document.getElementById('btn_show');
 
 button.addEventListener('click', removeClass);
 

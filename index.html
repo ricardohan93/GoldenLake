@@ -341,6 +341,28 @@
       </div>
     </div>
 
+    <div class="weather">
+      <div class="weather_block_bg">
+        <div class="main_weather_info">
+          <p id="date">31/12/2017</p>
+          <h3 id="temp"></h3>
+        </div>
+        <img src="#" id="weather_img" alt="weather_icon">
+      </div>
+      <div class="weather_block_sm">
+        <p>Velocidade do vento</p>
+        <h3 id="wind"></h3>
+      </div>
+      <div class="weather_block_sm">
+        <p>Humidade</p>
+        <h3 id="humidity"></h3>
+      </div>
+      <div class="weather_block_sm">
+        <p>Nuvens</p>
+        <h3 id="clouds"></h3>
+      </div>
+    </div>
+
     <div class="contact" id="contact">
       <p class="contact_title">Golden Lake Golf Club</p>
       <h4>Telefone</h4>
@@ -356,7 +378,37 @@
       <p>| Designed and developed by h.a.n</p>
     </div>
 
+      <!-- <div class="footer_lang">
+        <p id="eng">ENG</p>
+        <p id="kr">KR</p>
+        <p id="port">PT</p>
+      </div> -->
 
+  <script>
+    var ourRequest = new XMLHttpRequest();
+    ourRequest.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=3449344&units=metric&APPID=0377e46a7d6cbd710c217b8b56558ae9');
+    ourRequest.onload = function() {
+      var ourData = JSON.parse(ourRequest.responseText);
+      var img = document.getElementById('weather_img');
+      document.getElementById('date').innerHTML = new Date().toDateString();
+      document.getElementById('temp').innerHTML = ourData.main.temp + '°';
+      document.getElementById('wind').innerHTML = ourData.wind.speed + ' m/s';
+      document.getElementById('humidity').innerHTML = ourData.main.humidity + '%';
+      document.getElementById('clouds').innerHTML = ourData.clouds.all + '%';
+
+      if(ourData.weather[0].description === "light rain") {
+        img.src="imagens/svg/002-morning-rain.svg";
+      } else if (ourData.weather[0].description === "heavy intensity rain") {
+        img.src="imagens/svg/009-storm-1.svg";
+      } else if (ourData.weather[0].description === "sky is clear") {
+        img.src="imagens/svg/007-sunny.svg";
+      } else if (ourData.weather[0].description === "broken clouds" || "overcast clouds" || "few clouds" || "scattered clouds") {
+        img.src="imagens/svg/008-tide.svg";
+      }
+    };
+    ourRequest.send();
+  </script>
   <script src="index.js"></script>
+
   </body>
 </html>
