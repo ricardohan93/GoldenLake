@@ -1,0 +1,933 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  /* border: 1px solid #333; */
+}
+body {
+  /* background: #F2F2F2; */
+  position: relative;
+}
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: #FFF;
+}
+
+
+.navbar_desk {
+  display: block;
+}
+.navbar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transition: all .3s ease-in-out;
+}
+
+.navbar_back {
+  background: rgba(55, 55, 55, .6);
+}
+
+.navbar_logo {
+  width: 200px;
+  margin: .5%;
+}
+.navbar_logo img {
+  width: 85%;
+}
+.navbar_menu {
+  width: 65%;
+  text-align: right;
+  margin-right: 2.5%;
+}
+.navbar_menu li {
+  display: inline-block;
+  margin: 0 1.5%;
+  font-size: 14px;
+  letter-spacing: .1em;
+}
+.navbar_menu li > a:hover {
+  color: #E1BE73;
+}
+
+/* Mobile Navbar */
+.navbar_mobile_wrapper {
+  display: none;
+}
+.navbar_mobile {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  padding: 5px 0;
+  /* border-bottom: 1px solid #ECE7E7; */
+}
+.navbar_mobile > .navbar_logo > img {
+  width: 45px;
+  height: 40px;
+}
+.navbar_mobile a:nth-child(3) > i {
+  font-size: 2em;
+  color: #FFF;
+}
+.modal_menu {
+  position: relative;
+  width: 100%;
+}
+.modal_content {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(245, 245, 245, .9);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.modal_content:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal_list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+  text-align: center;
+}
+.modal_list li {
+  margin-bottom: 7%;
+  font-size: 1.8em;
+  font-weight: 400;
+  letter-spacing: .1em;
+}
+.modal_list a {
+  color: #000;
+}
+.close {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  color: #000;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+
+.jumbotron {
+  background: url('../imagens/hero_campos.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.jumbotron_content {
+  color: #FFF;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.jumbotron_content h3 {
+  font-size: 5.2em;
+  letter-spacing: .2em;
+}
+.jumbotron_content p {
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.btn_reserva, .btn_campo,
+.btn_map, .btn_galery,
+.btn_jumbo {
+  border: 2px solid #FFF;
+  padding: 13px 50px;
+  font-size: 1.2em;
+  letter-spacing: .2em;
+  transition: all .3s ease-in;
+}
+
+.btn_reserva,
+.btn_campo {
+  border: 2px solid #C5B181;
+  color: #C5B181;
+}
+.btn_reserva {
+  margin-bottom: 3%;
+}
+.btn_galery {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn_reserva:hover,
+.btn_campo:hover,
+.btn_map:hover {
+  border-color: #C5B181;
+  background: #C5B181;
+  color: #787264;
+}
+.btn_galery:hover,
+.btn_jumbo:hover {
+  background: #FFF;
+  color: #C5B181;
+}
+
+
+.intro {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 90vh;
+  margin-bottom: 4%;
+}
+.intro-left {
+  position: relative;
+}
+.intro_left_content {
+  position: absolute;
+  margin-top: 4%;
+  width: 55%;
+  margin-left: 8%;
+}
+.intro_left h3 {
+  font-size: 4.5em;
+  color: #C5B181;
+  line-height: 1.2em;
+  margin-bottom: 5%;
+}
+.intro_left p {
+  color: #787264;
+  font-size: 1.2em;
+  line-height: 1.7em;
+  width: 40%;
+  margin-bottom: 6%;
+}
+.intro_right {
+  background: url('../imagens/bandeira.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+
+.golf_course_grid {
+  display: grid;
+  grid-template-columns: 60% 30%;
+  grid-template-rows: 500px;
+  grid-column-gap: 5%;
+  margin-bottom: 5%;
+}
+#course_img {
+  width: 100%;
+  height: 100%;
+}
+.left_block {
+  margin-top: 5%;
+  color: #787264;
+}
+
+.bold_title {
+  font-size: 2.6em;
+  text-transform: uppercase;
+  color: #c5b181;
+  letter-spacing: .1em;
+  margin-bottom: 3%;
+  margin-left: 8%;
+}
+.course_grid_main {
+  margin-bottom: 8%;
+  width: 80%;
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-left: 8%;
+}
+.course_grid_txt {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  width: 80%;
+  margin-left: 8%;
+}
+
+.course_wrapper {
+  background: #333;
+  margin-bottom: 5%;
+  padding-bottom: 0;
+}
+
+.course_numbers {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3% 0;
+  margin-bottom: 4%;
+}
+.course_title {
+  font-size: 2.6em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #c5b181;
+  letter-spacing: .1em;
+  margin-right: 19%;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.course_title:after {
+  background-color: #c5b181;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+.course_title:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+
+.course_numbers > div {
+  margin: 0 5%;
+}
+.course_numbers > div > h3 {
+  font-size: 5.2em;
+  font-weight: 400;
+  color: #C5B181;
+}
+.course_numbers > div > h3 > span {
+  font-size: .4em;
+}
+.course_numbers > div > p {
+  font-size: 1.4em;
+  text-align: center;
+  color: #787264;
+}
+
+.course_section {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 80vh;
+}
+.course_content {
+  margin-left: 20%;
+}
+.course_content h4 {
+  width: 90%;
+  font-size: 1.7em;
+  font-weight: 400;
+  color: #C5B181;
+  margin-bottom: 7%;
+}
+.course_content p {
+  font-size: 1.2em;
+  color: #DAD5D5;
+  width: 75%;
+  line-height: 1.5em;
+  margin-bottom: 20%;
+}
+
+.course_section_img {
+  background: url('../imagens/bandeira.jpg') no-repeat center center;
+  background-size: cover;
+  width: 85%;
+  height: 80%;
+  position: relative;
+  margin-left: 0;
+}
+.course_section_img_hover,
+.info_section_img_hover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(36, 35, 31, 0.6);
+  color: #FFF;
+  transition: all .3s ease-in-out;
+}
+.course_section_img_hover:hover,
+.info_section_img_hover:hover {
+  opacity: 1;
+}
+.course_section_img_hover a,
+.info_section_img_hover a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/* Estrutura Grid */
+
+.structure_grid {
+  display: grid;
+  grid-template-columns: repeat(3, /*364px*/29%);
+  grid-template-rows: repeat(2, 29%);
+  justify-content: center;
+  grid-gap: 20px;
+  margin-bottom: 5%;
+}
+
+.grid_img {
+  position: relative;
+}
+.hide {
+  display: none;
+}
+
+.grid_img img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.grid_content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(197, 177, 129, 0.6);
+  transition: all .3s ease-in-out;
+}
+.grid_content:hover {
+  opacity: 1;
+}
+#btn_show {
+  background: transparent;
+  border: 2px solid #C5B181;
+  padding: 15px 0;
+  width: 60%;
+  color: #C5B181;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  transition: all .3s ease-in;
+  margin: 5% auto 0 auto;
+  cursor: pointer;
+}
+#btn_show:hover {
+  background: #C5B181;
+  color: #FFF;
+}
+
+.grid_content h3,
+.course_section_img_hover h3,
+.course_section_img_hover i,
+.info_section_img_hover h3,
+.info_section_img_hover i {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-family: 'Oswald', sans-serif;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.course_section_img_hover i {
+  top: 50%;
+}
+
+
+.info_wrapper {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 35% 55%;
+  grid-template-rows: 97%;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.black_stripe {
+  background: #333;
+  margin-left: 7%;
+  padding: 1px;
+  color: #FFF;
+  text-align: center;
+  letter-spacing: .1em;
+}
+.black_stripe img {
+  display: block;
+  margin: 8% auto 3% auto;
+}
+.black_stripe h3 {
+  font-size: 2.7em;
+  text-transform: uppercase;
+  margin-bottom: 1%;
+  font-weight: 400;
+  letter-spacing: .1em;
+}
+.sub_title, .green_fee {
+  font-size: .9em;
+  text-transform: uppercase;
+  margin-bottom: 5%;
+}
+#linha {
+  width: 55%;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  margin-bottom: 7%;
+}
+.green_fee {
+  margin-bottom: 10%;
+  font-style: italic;
+}
+.info_title {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3%;
+  color: #C5B181;
+}
+.info_txt, .info_val {
+  margin-bottom: 2px;
+  font-size: 1.1em;
+}
+
+.black_stripe p:nth-child(8) {
+  margin-bottom: 8%;
+}
+
+.info_section_img {
+  background: url('../imagens/campo_price.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+.info_section_img_hover i {
+  top: 50%;
+}
+
+
+.adress {
+  background: #333;
+  padding: 3% 0;
+}
+.adress_box {
+  padding: 4% 0;
+  position: relative;
+}
+.adress_box:before,
+.adress_box:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(197, 177, 129, .8);
+}
+.adress_box:before {
+  top: 20px;
+}
+.adress_box:after {
+  width: 10%;
+  bottom: 5px;
+}
+.adress_txt {
+  color: #C5B181;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 1%;
+  font-weight: 400;
+}
+.adress_box .adress_txt:nth-child(2) {
+  margin-bottom: 5%;
+}
+.btn_map {
+  display: block;
+  margin: 0 auto;
+  width: 170px;
+}
+
+
+.weather {
+  /* background: #31253B; */
+  background: #333;
+  color: #FFF;
+  width: 80%;
+  height: 25vh;
+  margin: 5% auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.weather_block_bg {
+  width: 40%;
+  height: 100%;
+  border-right: 2px solid #2B1F35;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.main_weather_info {
+  margin: 15px 15% 5% 8%;
+}
+.main_weather_info p {
+  font-size: 1.1em;
+}
+.main_weather_info h3 {
+  font-size: 4em;
+}
+.weather_block_bg img {
+  align-self: center;
+  width: 90px;
+}
+.weather_block_sm {
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid #2B1F35;
+}
+.weather_block_sm p {
+  margin-top: 15px;
+  margin-bottom: 5%;
+  text-align: center;
+}
+.weather_block_sm h3 {
+  font-size: 3em;
+  text-align: center;
+}
+
+
+.contact {
+  position: relative;
+  height: 65vh;
+  color: #333;
+  background: #F2F2F2;
+  text-align: center;
+}
+.contact_title {
+  font-size: 1.1em;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding-top: 5%;
+  overflow: hidden;
+}
+.contact_title:before,
+.contact_title:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  height: 1px;
+  background-color: rgba(51,51,51, .4);
+  vertical-align: middle;
+  width: 7%;
+}
+.contact_title:before {
+  right: .8em;
+  margin-left: -50%;
+}
+.contact_title:after {
+  left: .8em;
+  margin-right: -50%;
+}
+
+.contact h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 1%;
+  margin-top: 3%;
+}
+.contact_info {
+  font-size: 1.1em;
+  letter-spacing: .1em;
+  margin-bottom: 3px;
+}
+
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  color: #333;
+  padding: 1%;
+  background: #F2F2F2;
+}
+.footer p {
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: 1px;
+}
+
+
+
+@media only screen and (max-width: 440px) {
+  .navbar_desk {
+    display: none;
+  }
+  .navbar_mobile_wrapper {
+    display: block;
+  }
+  #menu {
+    width: 23px;
+  }
+  .jumbotron {
+    height: 80vh;
+    margin-bottom: 10%;
+  }
+  .jumbotron_content h3 {
+    font-size: 3.2em;
+  }
+  .intro {
+    /* display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 85vh 40vh; */
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 125vh;
+  }
+  .intro_left_content {
+    position: inherit;
+    width: 85%;
+    margin-bottom: 50px;
+  }
+  .intro_left h3 {
+    font-size: 2.5em;
+  }
+  .intro_left p {
+    font-size: 1.1em;
+    width: 90%;
+    margin-bottom: 50px;
+  }
+  /* Change image in mobile */
+  .intro_right {
+    width: 100%;
+    height: 30%;
+  }
+  .golf_course_grid {
+    /* display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 93vh 40vh; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  #course_img {
+    order: 2;
+  }
+  .left_block {
+    order: 1;
+    margin-bottom: 8%;
+  }
+  .bold_title {
+    font-size: 2.5em;
+  }
+  .title_mob {
+    margin-bottom: 10%;
+  }
+  .course_grid_main {
+    width: 85%;
+  }
+  .course_grid_txt {
+    font-size: 1.1em;
+    width: 85%;
+    line-height: 1.7em;
+  }
+  .course_wrapper {
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+  }
+  .course_numbers {
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+    justify-content: flex-start;
+    padding-top: 30px;
+  }
+  .course_title {
+    font-size: 2.5em;
+    margin-left: 8%;
+    margin-bottom: 30px;
+  }
+  .course_title:after {
+    display: none;
+  }
+  .course_numbers > div {
+    margin: 0 auto;
+  }
+  .course_numbers > div > h3 {
+    font-size: 3em;
+  }
+  .course_numbers > div > p {
+    font-size: 1.1em;
+  }
+  .course_section {
+    /* grid-template-columns: 100%;
+    grid-template-rows: 75vh 40vh; */
+    width: 100%;
+    height: 105vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .course_content {
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 50px;
+  }
+  .course_content h4 {
+    width: 100%;
+    font-size: 1.6em;
+  }
+  .course_content p {
+    font-size: 1.1em;
+    width: 100%;
+  }
+  .course_section_img {
+    width: 100%;
+    /* height: 100%; */
+    height: 33%;
+  }
+  .course_section_img_hover h3,
+  .info_section_img_hover h3 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+  .course_section_img_hover i,
+  .info_section_img_hover i {
+    top: 60%;
+  }
+  .structure_grid {
+    /* grid-template-columns: repeat(2, 47%);
+    grid-template-rows: repeat(2, 60%);
+    grid-gap: 5px; */
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+  }
+  .grid_img {
+    width: 48%;
+    margin: 2px;
+  }
+  #btn_show {
+    /* width: 100%; */
+    width: 50%;
+    font-size: 1em;
+    padding: 13px 0;
+    letter-spacing: .1em;
+  }
+  .grid_content h3 {
+    font-size: 1.2em;
+  }
+  .btn_galery {
+    padding: 6px 15px;
+    font-size: .8em;
+  }
+  .info_wrapper {
+    /* grid-template-columns: 100%;
+    grid-template-rows: 100vh 45vh; */
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 145vh;
+    /* margin-bottom: 300px; */
+  }
+  .black_stripe {
+    margin-left: 0;
+    padding-bottom: 10px;
+  }
+  .black_stripe h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  .info_section_img {
+    width: 100%;
+    height: 30%;
+  }
+  .adress_box {
+    padding: 10% 0;
+  }
+  .adress_txt {
+    width: 95%;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto 5% auto;
+  }
+
+  .weather {
+    display: block;
+    height: 70vh;
+  }
+  .weather_block_bg {
+    width: 100%;
+    height: 26%;
+  }
+  .main_weather_info {
+    margin: 30px 15% 10% 15%;
+  }
+  .main_weather_info p {
+    font-size: 1em;
+  }
+  .main_weather_info h3 {
+    font-size: 2em;
+  }
+  .weather_block_bg img {
+    width: 60px;
+  }
+  .weather_block_sm {
+    width: 100%;
+    height: 20%;
+    border-right: none;
+    margin-top: 15px;
+  }
+  .weather_block_sm p {
+    margin-top: 6px;
+    margin-bottom: 1%;
+  }
+  .weather_block_sm h3 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+
+  .contact {
+    height: 50vh;
+  }
+  .contact_title {
+    padding-top: 10%;
+  }
+  .contact h4 {
+    margin-bottom: 2%;
+    margin-top: 6%;
+  }
+  .contact_info {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  .footer {
+    justify-content: flex-start;
+    padding: 2%;
+  }
+  .footer p {
+    font-size: .55em;
+  }
+
+}
